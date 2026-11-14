@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimi Chat</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="mark" aria-hidden="true">m</span> Minimi Chat</div>
+    <button id="new-chat" class="new-chat" type="button"><span aria-hidden="true">＋</span> New chat</button>
+    <nav id="chats" aria-label="Recent chats"></nav>
+  </aside>
+  <main>
+    <header>
+      <button id="toggle-sidebar" aria-controls="sidebar" aria-expanded="false" type="button">Chats</button>
+      <span id="chat-title">New chat</span>
+    </header>
+    <section id="conversation" aria-label="Conversation" tabindex="0">
+      <div id="empty">
+        <span class="mark large" aria-hidden="true">m</span>
+        <h1>What are we looking into?</h1>
+        <p>Look something up, or pick up where you left off.</p>
+        <div class="suggestions">
+          <button type="button">Compare CRM tools for a 20-person sales team</button>
+          <button type="button">Find managed Postgres hosting with a free tier</button>
+        </div>
+      </div>
+      <div id="messages"></div>
+    </section>
+    <div class="composer">
+      <p id="status" role="status"></p>
+      <div id="error" role="alert" hidden></div>
+      <form id="composer">
+        <textarea id="question" aria-label="Message" placeholder="Ask a question…" rows="2" maxlength="8000" required></textarea>
+        <button id="send" type="submit">Send</button>
+        <button id="stop" type="button" hidden>Stop</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
